@@ -1,6 +1,7 @@
 {
+  "indent_size": 2,
+  "indent_with_tabs": false,
   "js": {
-    "brace_style": "collapse,preserve-inline",
-    "indent_size": 2
+    "brace_style": "collapse,preserve-inline"
   }
 }

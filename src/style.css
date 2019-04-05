@@ -44,3 +44,15 @@ body * {
 .app-header .icon {
   margin-left: 6px;
 }
+
+/* BOOTSTRAP OVERRIDE */
+
+.modal-content {
+  border-radius: 0;
+}
+
+/* LAYOUT */
+
+.app {
+  margin-top: 15px;
+}

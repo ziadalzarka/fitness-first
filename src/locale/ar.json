@@ -1,6 +1,7 @@
 {
   "global": {
-    "title": "Fitness First GYM"
+    "title": "Fitness First GYM",
+    "cancel": "إلغاء"
   },
   "clients": {
     "search": "بحث",
@@ -8,7 +9,9 @@
     "system": "النظام",
     "price": "السعر",
     "start-date": "تاريخ البداية",
-    "end-date": "تاريخ النهاية"
+    "end-date": "تاريخ النهاية",
+    "add": "أضف عميل",
+    "edit": "تعديل العميل"
   },
   "controls": {
     "add-client": "أضف عميل",

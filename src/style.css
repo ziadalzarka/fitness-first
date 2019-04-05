@@ -52,6 +52,21 @@ body * {
 
 .modal-content {
   border-radius: 0;
+  direction: rtl;
+}
+
+.modal-content,
+.modal-content * {
+  text-align: right;
+}
+
+.uib-datepicker-popup {
+  background: white;
+  padding: 0;
+}
+
+.uib-datepicker-popup, .uib-datepicker-popup * {
+  outline: none;
 }
 
 /* LAYOUT */
@@ -60,6 +75,7 @@ body * {
   margin-top: 15px;
 }
 
-[dir="rtl"], [dir="rtl"] * {
+[dir="rtl"],
+[dir="rtl"] * {
   text-align: right;
 }

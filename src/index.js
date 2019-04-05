@@ -4,7 +4,7 @@ require('angular-ui-bootstrap');
 require('./polyfill');
 require('./locale/config')
 require('./components/clients/clients.component.js');
-require('./components/add-client/add-client.component.js');
+require('./components/client-modal/client-modal.component.js');
 require('./components/controls/controls.component.js');
 require('./components/header/header.component.js');
 require('./components/layout/layout.component.js');

@@ -1,0 +1,38 @@
+<div class="modal-header">
+  <h4 ng-show="adding()">{{ 'clients.add' | translate }}</h4>
+  <h4 ng-show="editing()">{{ 'clients.edit' | translate }}</h4>
+</div>
+
+<div class="modal-body">
+  <form>
+    <div class="form-group">
+      <label for="client-name">{{ 'clients.name' | translate }}</label>
+      <input type="text" class="form-control" id="client-name">
+    </div>
+    <div class="form-group">
+      <label for="client-system">{{ 'clients.system' | translate }}</label>
+      <input type="text" class="form-control" id="client-system">
+    </div>
+    <div class="form-group">
+      <label for="client-price">{{ 'clients.price' | translate }}</label>
+      <input type="number" class="form-control" id="client-price">
+    </div>
+    <div class="form-group">
+      <label for="client-start-date">{{ 'clients.start-date' | translate }}</label>
+      <input type="text" class="form-control"
+        ng-click="onStartDatePopupClick()"
+        uib-datepicker-popup="yyyy/MM/dd"
+        show-button-bar="false"
+        ng-model="date"
+        is-open="startDatePopup.opened"
+        ng-required="true"
+        datepicker-options="{ showWeeks: false }" />
+    </div>
+  </form>
+</div>
+
+<div class="modal-footer">
+  <button class="btn btn-primary" ng-show="adding()">{{ 'clients.add' | translate }}</button>
+  <button class="btn btn-primary" ng-show="editing()">{{ 'clients.edit' | translate }}</button>
+  <button class="btn btn-default">{{ 'global.cancel' | translate }}</button>
+</div>

@@ -3,6 +3,15 @@
     "title": "Fitness First GYM"
   },
   "clients": {
-    "search": "بحث"
+    "search": "بحث",
+    "name": "الاسم",
+    "system": "النظام",
+    "price": "السعر",
+    "start-date": "تاريخ البداية",
+    "end-date": "تاريخ النهاية"
+  },
+  "controls": {
+    "add-client": "أضف عميل",
+    "exit": "خروج"
   }
 }

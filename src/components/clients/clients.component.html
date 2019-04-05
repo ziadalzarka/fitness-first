@@ -1,6 +1,24 @@
-<div class="input-group">
-  <span class="input-group-addon" id="search-addon">
-    <i class="fa fa-search" aria-hidden="true"></i>
-  </span>
-  <input type="text" class="form-control" placeholder="{{ 'clients.search' | translate }}" aria-describedby="search-addon">
+<div class="form-group">
+  <input type="text" class="form-control" placeholder="{{ 'clients.search' | translate }}">
 </div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>{{ 'clients.name' | translate }}</th>
+      <th>{{ 'clients.system' | translate }}</th>
+      <th>{{ 'clients.price' | translate }}</th>
+      <th>{{ 'clients.start-date' | translate }}</th>
+      <th>{{ 'clients.end-date' | translate }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="client in clients" ng-class="statusClasses[client.status]">
+      <td>{{ client.name }}</td>
+      <td>{{ client.system }}</td>
+      <td>{{ client.price }}</td>
+      <td>{{ client.startDate | date }}</td>
+      <td>{{ client.endDate | date }}</td>
+    </tr>
+  </tbody>
+</table>

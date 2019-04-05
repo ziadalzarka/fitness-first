@@ -1,3 +1,5 @@
+@import url('./assets/css/Cairo.css');
+
 /* INITIAL */
 
 html,
@@ -9,7 +11,8 @@ body {
 
 body,
 body * {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Cairo', sans-serif;
+  user-select: none;
 }
 
 /* UTILS */
@@ -55,4 +58,8 @@ body * {
 
 .app {
   margin-top: 15px;
+}
+
+[dir="rtl"], [dir="rtl"] * {
+  text-align: right;
 }

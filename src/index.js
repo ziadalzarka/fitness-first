@@ -1,4 +1,5 @@
 require('angular');
+require('angular-i18n/ar');
 require('angular-ui-bootstrap');
 require('./polyfill');
 require('./locale/config')

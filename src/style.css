@@ -1,0 +1,46 @@
+/* INITIAL */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #f8f8f8;
+}
+
+body,
+body * {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* UTILS */
+
+.pointer {
+  cursor: pointer;
+}
+
+/* HEADER */
+
+.app-header {
+  background: #444;
+  color: white;
+}
+
+.app-header p {
+  margin: 0;
+  flex: 1;
+  padding: 8px;
+  -webkit-app-region: drag;
+}
+
+/* HEADER ICONS */
+
+.app-header {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  padding-right: 8px;
+}
+
+.app-header .icon {
+  margin-left: 6px;
+}

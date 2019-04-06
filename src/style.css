@@ -65,7 +65,8 @@ body * {
   padding: 0;
 }
 
-.uib-datepicker-popup, .uib-datepicker-popup * {
+.uib-datepicker-popup,
+.uib-datepicker-popup * {
   outline: none;
 }
 
@@ -78,4 +79,14 @@ body * {
 [dir="rtl"],
 [dir="rtl"] * {
   text-align: right;
+}
+
+/* NOTIFICATIONS */
+
+.notification {
+  margin-bottom: 10px;
+}
+
+.notification .notification-body {
+  padding-right: 3px;
 }

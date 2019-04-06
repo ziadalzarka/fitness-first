@@ -4,7 +4,7 @@ angular.module('app', ['ui.bootstrap'])
   .component('appControls', {
     templateUrl: 'components/controls/controls.component.html',
     controller: ($scope, $uibModal) => {
-      $scope.openAddClient = () => {
+      $scope.openAddClientModal = () => {
         $uibModal.open({ component: 'appClientModal' });
       };
 

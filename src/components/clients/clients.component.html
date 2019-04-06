@@ -5,7 +5,9 @@
 <table class="table">
   <thead>
     <tr>
+      <th>{{ 'clients.id' | translate }}</th>
       <th>{{ 'clients.name' | translate }}</th>
+      <th>{{ 'clients.phone' | translate }}</th>
       <th>{{ 'clients.system' | translate }}</th>
       <th>{{ 'clients.price' | translate }}</th>
       <th>{{ 'clients.start-date' | translate }}</th>
@@ -14,11 +16,19 @@
   </thead>
   <tbody>
     <tr ng-repeat="client in clients" ng-class="statusClasses[client.status]">
+      <td>{{ client.id }}</td>
       <td>{{ client.name }}</td>
+      <td>{{ client.phone }}</td>
       <td>{{ client.system }}</td>
       <td>{{ client.price }}</td>
       <td>{{ client.startDate | date }}</td>
       <td>{{ client.endDate | date }}</td>
+      <td class="text-center">
+        <i class="fa fa-pencil pointer" ng-click="openDeleteClientModal()"></i>
+      </td>
+      <td  class="text-center">
+        <i class="fa fa-trash pointer" ng-click="openDeleteClientModal()"></i>
+      </td>
     </tr>
   </tbody>
 </table>

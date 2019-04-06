@@ -1,11 +1,14 @@
 {
   "global": {
     "title": "Fitness First GYM",
+    "delete": "حذف",
     "cancel": "إلغاء"
   },
   "clients": {
     "search": "بحث",
+    "id": "الكود",
     "name": "الاسم",
+    "phone": "الهاتف",
     "system": "النظام",
     "price": "السعر",
     "start-date": "تاريخ البداية",
@@ -13,8 +16,16 @@
     "add": "أضف عميل",
     "edit": "تعديل العميل"
   },
+  "notifications": {
+    "inactive": "انتهى اشتراكه",
+    "close": "اقترب اشتراكه على الانتهاء"
+  },
   "controls": {
     "add-client": "أضف عميل",
     "exit": "خروج"
+  },
+  "delete-client-modal": {
+    "header": "حذف عميل",
+    "body": "هل أنت متأكد من هذه العملية؟"
   }
 }

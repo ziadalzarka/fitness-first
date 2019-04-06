@@ -1,3 +1,9 @@
-<p>
-  Notifications works!
-</p>
+<div class="panel panel-default notification pointer" ng-repeat="notification in notifications">
+  <div class="panel-body">
+    <span class="badge badge-warning" ng-show="notification.status === 'close'">{{ notification.days }}</span>
+    <span class="badge badge-danger" ng-show="notification.status === 'inactive'">{{ notification.days }}</span>
+    <span class="notification-body">
+      {{ 'clients.name' | translate }} {{ notification.name }} {{ 'notifications.' + notification.status | translate }}
+    </span>
+  </div>
+</div>

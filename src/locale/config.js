@@ -1,7 +1,7 @@
 angular.module('app')
-  .filter('translate', () => {
+  .filter('translate', function() {
     const translations = require('./ar.json');
-    return (input) => {
+    return function(input) {
       const parts = input.split('.');
       let translation = translations;
       for (const part of parts) {

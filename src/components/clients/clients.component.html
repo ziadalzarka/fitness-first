@@ -15,7 +15,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="client in clients" ng-class="statusClasses[client.status]">
+    <tr ng-repeat="client in clients track by client.id" ng-class="statusClasses[client.status]">
       <td>{{ client.id }}</td>
       <td>{{ client.name }}</td>
       <td>{{ client.phone }}</td>

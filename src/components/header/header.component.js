@@ -2,13 +2,13 @@ const { remote } = require('electron');
 
 angular.module('app', []).component('appHeader', {
   templateUrl: 'components/header/header.component.html',
-  controller: ($scope) => {
+  controller: function ($scope) {
 
-    $scope.minimize = () => {
+    $scope.minimize = function () {
       remote.getCurrentWindow().minimize();
     }
 
-    $scope.maximize = () => {
+    $scope.maximize = function () {
       const maximized = remote.getCurrentWindow().isMaximized();
       if (maximized) {
         remote.getCurrentWindow().unmaximize();
@@ -17,7 +17,7 @@ angular.module('app', []).component('appHeader', {
       }
     };
 
-    $scope.close = () => {
+    $scope.close = function () {
       remote.app.exit();
     };
   }

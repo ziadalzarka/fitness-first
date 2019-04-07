@@ -90,3 +90,9 @@ body * {
 .notification .notification-body {
   padding-right: 3px;
 }
+
+/* FORMS */
+
+input.has-error {
+  border: 1px solid darkred;
+}

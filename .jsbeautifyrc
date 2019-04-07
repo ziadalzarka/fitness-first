@@ -3,5 +3,8 @@
   "indent_with_tabs": false,
   "js": {
     "brace_style": "collapse,preserve-inline"
+  },
+  "html": {
+    "wrap_attributes": "preserve"
   }
 }

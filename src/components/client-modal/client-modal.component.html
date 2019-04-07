@@ -4,39 +4,52 @@
 </div>
 
 <div class="modal-body">
-  <form>
+  <form name="clientForm">
     <div class="form-group">
-      <label for="client-name">{{ 'clients.name' | translate }}</label>
-      <input type="text" class="form-control" id="client-name">
+      <label for="clientName">{{ 'clients.name' | translate }}</label>
+      <span>*</span>
+      <input type="text" class="form-control" ng-class="hasError('clientName')" name="clientName" ng-model="client.name" required>
     </div>
+
     <div class="form-group">
-      <label for="client-system">{{ 'clients.system' | translate }}</label>
-      <input type="text" class="form-control" id="client-system">
+      <label for="clientSystem">{{ 'clients.system' | translate }}</label>
+      <input type="text" class="form-control" ng-class="hasError('clientSystem')" name="clientSystem" ng-model="client.system">
     </div>
+
     <div class="form-group">
-      <label for="client-phone">{{ 'clients.phone' | translate }}</label>
-      <input type="tel" class="form-control" id="client-phone">
+      <label for="clientPhone">{{ 'clients.phone' | translate }}</label>
+      <input type="tel" class="form-control" ng-class="hasError('clientPhone')" name="clientPhone" ng-model="client.phone">
     </div>
+
     <div class="form-group">
-      <label for="client-price">{{ 'clients.price' | translate }}</label>
-      <input type="number" class="form-control" id="client-price">
+      <label for="clientPrice">{{ 'clients.price' | translate }}</label>
+      <span>*</span>
+      <input type="number" class="form-control" ng-class="hasError('clientPrice')" name="clientPrice" ng-model="client.price" required>
     </div>
+
     <div class="form-group">
-      <label for="client-start-date">{{ 'clients.start-date' | translate }}</label>
-      <input type="text" class="form-control"
+      <label for="clientStartDate">{{ 'clients.start-date' | translate }}</label>
+      <span>*</span>
+      <input type="text"
+        name="clientStartDate"
+        class="form-control"
+        ng-class="hasError('clientStartDate')"
         ng-click="onStartDatePopupClick()"
         uib-datepicker-popup="yyyy/MM/dd"
         show-button-bar="false"
-        ng-model="date"
+        ng-model="client.startDate"
         is-open="startDatePopup.opened"
         ng-required="true"
-        datepicker-options="{ showWeeks: false }" />
+        datepicker-options="{ showWeeks: false }"
+        ng-keypress="preventDefault($event)"
+        required />
     </div>
+
   </form>
 </div>
 
 <div class="modal-footer">
-  <button class="btn btn-primary" ng-show="adding()">{{ 'clients.add' | translate }}</button>
-  <button class="btn btn-primary" ng-show="editing()">{{ 'clients.edit' | translate }}</button>
-  <button class="btn btn-default">{{ 'global.cancel' | translate }}</button>
+  <button class="btn btn-primary" ng-show="adding()" ng-click="handleAdd()">{{ 'clients.add' | translate }}</button>
+  <button class="btn btn-primary" ng-show="editing()" ng-click="handleEdit()">{{ 'clients.edit' | translate }}</button>
+  <button class="btn btn-default" ng-click="$ctrl.dismiss()">{{ 'global.cancel' | translate }}</button>
 </div>

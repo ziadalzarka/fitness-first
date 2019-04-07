@@ -3,7 +3,7 @@
     <span class="badge badge-warning" ng-show="notification.status === 'close'">{{ notification.days }}</span>
     <span class="badge badge-danger" ng-show="notification.status === 'inactive'">{{ notification.days }}</span>
     <span class="notification-body">
-      {{ 'clients.name' | translate }} {{ notification.name }} {{ 'notifications.' + notification.status | translate }}
+      {{ notification.name }} {{ 'notifications.' + notification.status | translate }}
     </span>
   </div>
 </div>

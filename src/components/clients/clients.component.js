@@ -1,4 +1,4 @@
-angular.module('app', ['ui.bootstrap'])
+angular.module('app', ['ui.bootstrap', 'gray'])
   .component('appClients', {
     templateUrl: 'components/clients/clients.component.html',
     controller: function($scope, $uibModal, clients) {
@@ -10,6 +10,8 @@ angular.module('app', ['ui.bootstrap'])
       $scope.openDeleteClientModal = function () {
         $uibModal.open({ component: 'appDeleteClientModal' });
       };
+
+      $scope.query = '';
 
       function refresh() {
         $scope.clients = clients.list();

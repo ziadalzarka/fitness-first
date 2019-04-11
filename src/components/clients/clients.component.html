@@ -1,5 +1,5 @@
 <div class="form-group">
-  <input type="text" class="form-control" placeholder="{{ 'clients.search' | translate }}">
+  <input type="text" class="form-control" placeholder="{{ 'clients.search' | translate }}" ng-model="query">
 </div>
 
 <table class="table">
@@ -15,7 +15,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="client in clients track by client.id" ng-class="statusClasses[client.status]">
+    <tr ng-repeat="client in clients | fuse : query track by client.id" ng-class="statusClasses[client.status]">
       <td>{{ client.id }}</td>
       <td>{{ client.name }}</td>
       <td>{{ client.phone }}</td>

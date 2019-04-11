@@ -9,6 +9,10 @@ require('angular-ui-bootstrap');
 require('./polyfill');
 require('./locale/config');
 
+// Pipes
+
+require('./pipes/fuse');
+
 // Services
 
 require('./services/db.service');

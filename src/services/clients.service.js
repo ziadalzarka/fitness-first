@@ -28,6 +28,9 @@ angular.module('app', [])
       list: function() {
         return db.get('clients').value();
       },
+      update: function(id, payload) {
+        db.get('clients').find({ id }).assign(payload).write();
+      },
       remove: function(id) {
         db.get('clients').remove({ id }).write();
         this.refresh();

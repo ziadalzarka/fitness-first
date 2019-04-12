@@ -19,7 +19,6 @@ angular
       ]
     };
     return (array, query) => {
-      console.log('hey');
       if (!array) { return; }
       if (!query) { return array; }
       const fuse = new Fuse(array, fuseOptions);

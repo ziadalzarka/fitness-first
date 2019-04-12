@@ -7,6 +7,6 @@
 </div>
 
 <div class="modal-footer">
-  <button class="btn btn-danger">{{ 'global.delete' | translate }}</button>
-  <button class="btn btn-default">{{ 'global.cancel' | translate }}</button>
+  <button class="btn btn-danger" ng-click="$ctrl.close()">{{ 'global.delete' | translate }}</button>
+  <button class="btn btn-default" ng-click="$ctrl.dismiss()">{{ 'global.cancel' | translate }}</button>
 </div>

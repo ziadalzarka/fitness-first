@@ -1,6 +1,8 @@
 <div class="modal-header">
-  <h4 ng-show="adding()">{{ 'clients.add' | translate }}</h4>
-  <h4 ng-show="editing()">{{ 'clients.edit' | translate }}</h4>
+  <h4>
+    <span ng-show="adding()">{{ 'clients.add' | translate }}</span>
+    <span ng-show="editing()">{{ 'clients.edit' | translate }}</span>
+  </h4>
 </div>
 
 <div class="modal-body">
@@ -49,7 +51,9 @@
 </div>
 
 <div class="modal-footer">
-  <button class="btn btn-primary" ng-show="adding()" ng-click="handleAdd()">{{ 'clients.add' | translate }}</button>
-  <button class="btn btn-primary" ng-show="editing()" ng-click="handleEdit()">{{ 'clients.edit' | translate }}</button>
+  <button class="btn btn-primary" ng-click="handleSubmit()">
+    <span ng-show="adding()">{{ 'clients.add' | translate }}</span>
+    <span ng-show="editing()">{{ 'clients.edit' | translate }}</span>
+  </button>
   <button class="btn btn-default" ng-click="$ctrl.dismiss()">{{ 'global.cancel' | translate }}</button>
 </div>

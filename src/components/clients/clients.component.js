@@ -7,8 +7,20 @@ angular.module('app', ['ui.bootstrap', 'gray'])
         inactive: 'bg-danger'
       };
 
-      $scope.openDeleteClientModal = function () {
-        $uibModal.open({ component: 'appDeleteClientModal' });
+      $scope.openEditClientModal = function(selectedClient) {
+        const modal = $uibModal.open({
+          component: 'appClientModal',
+          resolve: {
+            mode: () => 'edit',
+            client: () => selectedClient,
+          }
+        });
+        modal.result.then(client => clients.update(client.id, client));
+      }
+
+      $scope.openDeleteClientModal = function(client) {
+        const modal = $uibModal.open({ component: 'appDeleteClientModal' });
+        modal.result.then(() => clients.remove(client.id))
       };
 
       $scope.query = '';
@@ -19,5 +31,9 @@ angular.module('app', ['ui.bootstrap', 'gray'])
 
       clients.listeners.push(refresh);
       refresh();
+
+      $scope.renewClientSubscription = (client) => {
+        clients.update(client.id, { startDate: new Date() });
+      };
     }
   })

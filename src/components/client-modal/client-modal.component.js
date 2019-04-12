@@ -2,14 +2,13 @@ angular.module('app', ['ui.bootstrap'])
   .component('appClientModal', {
     templateUrl: 'components/client-modal/client-modal.component.html',
     bindings: {
+      resolve: '<',
       close: '&',
       dismiss: '&',
     },
-    controller: function($scope, clients) {
-      $scope.mode = 'add';
-
-      $scope.adding = () => $scope.mode == 'add';
-      $scope.editing = () => $scope.mode == 'edit';
+    controller: function($scope) {
+      $scope.adding = () => $scope.$ctrl.resolve.mode == 'add';
+      $scope.editing = () => $scope.$ctrl.resolve.mode == 'edit';
 
       $scope.startDatePopup = {
         opened: false,
@@ -29,12 +28,17 @@ angular.module('app', ['ui.bootstrap'])
         event.preventDefault();
       }
 
-      $scope.client = {};
+      $scope.$ctrl.$onInit = function() {
+        const existing = $scope.$ctrl.resolve.client;
+        $scope.client = {
+          startDate: new Date(),
+          ...existing && { ...existing, startDate: new Date(existing.startDate) },
+        };
+      };
 
-      $scope.handleAdd = function() {
+      $scope.handleSubmit = function() {
         if ($scope.clientForm.$invalid) { return; }
-        clients.create($scope.client);
-        $scope.$ctrl.close();
+        $scope.$ctrl.close({ $value: $scope.client });
       };
     }
   })

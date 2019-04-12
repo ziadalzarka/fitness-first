@@ -22,17 +22,26 @@ angular.module('app', [])
         const list = this.list();
         const id = incrementId(list);
         const endDate = generateEndDate(payload.startDate);
-        db.get('clients').push({ id, ...payload, endDate }).write();
+        db.get('clients')
+          .push({ id, ...payload, endDate })
+          .write();
         this.refresh();
       },
       list: function() {
         return db.get('clients').value();
       },
       update: function(id, payload) {
-        db.get('clients').find({ id }).assign(payload).write();
+        const endDate = generateEndDate(payload.startDate);
+        db.get('clients')
+          .find({ id })
+          .assign({ ...payload, endDate })
+          .write();
+        this.refresh();
       },
       remove: function(id) {
-        db.get('clients').remove({ id }).write();
+        db.get('clients')
+          .remove({ id })
+          .write();
         this.refresh();
       },
       refresh: function() {

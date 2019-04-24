@@ -15,6 +15,7 @@ require('./pipes/fuse');
 
 // Services
 
+require('./services/auth.service');
 require('./services/db.service');
 require('./services/clients.service');
 

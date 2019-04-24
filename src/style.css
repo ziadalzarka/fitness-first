@@ -96,3 +96,22 @@ body * {
 input.has-error {
   border: 1px solid darkred;
 }
+
+/* LOADER */
+
+.full-container {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+
+.center-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.loader {
+  font-size: 24px;
+}

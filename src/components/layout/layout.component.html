@@ -1,6 +1,6 @@
 <app-header></app-header>
 
-<div class="app container-fluid" dir="rtl">
+<div class="app container-fluid" dir="rtl" ng-show="state == 'ok'">
 
   <div class="row">
     <div class="col-xs-12 col-sm-4">
@@ -13,4 +13,9 @@
   </div>
 
   <app-controls></app-controls>
+</div>
+
+<div class="full-container center-flex" ng-hide="state == 'ok'">
+  <p>{{ 'state.' + state | translate }}</p>
+  <i class="fa fa-circle-o-notch fa-spin loader" ng-show="state == 'connecting'"></i>
 </div>
